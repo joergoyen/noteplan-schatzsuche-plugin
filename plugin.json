@@ -1,0 +1,63 @@
+{
+  "noteplan.minAppVersion": "3.21",
+  "plugin.id": "joergoyen.Schatzsuche",
+  "plugin.name": "🪎 Schatzsuche",
+  "plugin.description": "A treasure hunt for your notes: instant search in the sidebar, quick-search buttons, filters by date, heading, folder and task state, a collecting box (Schatzkiste) to save picked results as Markdown, and optional Raindrop.io bookmarks. English and German.",
+  "plugin.author": "Jörg Oyen",
+  "plugin.version": "1.0.0",
+  "plugin.url": "https://github.com/joergoyen/noteplan-schatzsuche-plugin",
+  "plugin.icon": "treasure-chest",
+  "plugin.iconColor": "orange-500",
+  "plugin.type": "html",
+  "plugin.html": "index.html",
+  "plugin.sidebarView": true,
+  "plugin.sidebarTitle": "Schatzsuche",
+  "plugin.script": "script.js",
+  "plugin.commands": [
+    {
+      "name": "Schatzsuche",
+      "description": "Open the Schatzsuche (treasure hunt) search view",
+      "jsFunction": "schatzsuche",
+      "sidebarView": {
+        "title": "Schatzsuche",
+        "icon": "treasure-chest",
+        "iconColor": "orange-500"
+      }
+    }
+  ],
+  "plugin.settings": [
+    {
+      "type": "heading",
+      "title": "General / Allgemein"
+    },
+    {
+      "key": "language",
+      "title": "Language / Sprache",
+      "description": "auto: follows your system language. / auto: folgt der Systemsprache.",
+      "type": "string",
+      "choices": ["auto", "English", "Deutsch"],
+      "default": "auto",
+      "required": false
+    },
+    {
+      "key": "treasureTag",
+      "title": "Treasure tag / Schatz-Tag",
+      "description": "The tag you use to mark treasures, used by two quick-search buttons. / Der Tag, mit dem du Schätze markierst; für zwei Schnellsuchen.",
+      "type": "string",
+      "default": "#schatz",
+      "required": false
+    },
+    {
+      "type": "heading",
+      "title": "Raindrop.io (optional)"
+    },
+    {
+      "key": "raindropToken",
+      "title": "Raindrop token",
+      "description": "Test token from app.raindrop.io › Settings › Integrations › your app. Read only. Leave empty to switch Raindrop off. / Test-Token aus app.raindrop.io › Settings › Integrations. Nur lesen. Leer lassen: Raindrop aus.",
+      "type": "string",
+      "default": "",
+      "required": false
+    }
+  ]
+}
