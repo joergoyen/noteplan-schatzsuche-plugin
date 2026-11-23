@@ -36,7 +36,6 @@ en:{
  'r.newest':'Newest first','t.newest':'Sort by last change instead of number of hits',
  'r.rd':'Raindrop','t.rd':'Search your Raindrop.io bookmarks (full text with Raindrop Pro)',
  'r.fav':'♥ Favourites','t.fav':'Only Raindrop favourites',
- 'r.rem':'🔔 Reminders','t.rem':'Raindrop bookmarks with a reminder, next one first',
  'h.title':'Search syntax',
  'h.rd':'Enter your own Raindrop test token in NotePlan: Settings › Plugins › Schatzsuche (gear). The token is only read, never shown or logged.',
  'v.text':'Text:','v.short':'Short','v.shorttip':'1 line, shortened','v.medium':'Medium','v.mediumtip':'2 lines, shortened','v.full':'Full','v.fulltip':'up to 4 lines, not shortened',
@@ -64,7 +63,7 @@ en:{
   ['in:notes  in:calendar  in:archive','where to search'],['folder:Clients','folder (part of the name)'],
   ['is:open  is:done  is:task  is:not-task','line type'],['heading:Ideas','below a matching heading'],
   ['since:14d  since:week  since:month  since:year  since:2026-09-01','date of the calendar note or last change'],
-  ['in:raindrop  link:example.com  type:article  important:true  reminder:true','Raindrop bookmarks (only with «in:raindrop»)'],
+  ['in:raindrop  link:example.com  type:article  important:true','Raindrop bookmarks (only with «in:raindrop»)'],
   ['Click on a title','opens the note · ⌥ split view · ⌘ new window · ↑↓ + Enter']]
 },
 de:{
@@ -82,7 +81,6 @@ de:{
  'r.newest':'Neueste zuerst','t.newest':'Nach letzter Änderung statt nach Trefferzahl sortieren',
  'r.rd':'Raindrop','t.rd':'Lesezeichen in Raindrop.io durchsuchen (Volltext mit Raindrop Pro)',
  'r.fav':'♥ Favoriten','t.fav':'Nur Raindrop-Favoriten',
- 'r.rem':'🔔 Wiedervorlage','t.rem':'Raindrop-Lesezeichen mit Wiedervorlage, nächste zuerst',
  'h.title':'Suchsyntax',
  'h.rd':'Eigenen Raindrop-Test-Token in NotePlan eintragen: Settings › Plugins › Schatzsuche (Zahnrad). Der Token wird nur gelesen, nie angezeigt oder protokolliert.',
  'v.text':'Text:','v.short':'Kurz','v.shorttip':'1 Zeile, gekürzt','v.medium':'Mittel','v.mediumtip':'2 Zeilen, gekürzt','v.full':'Voll','v.fulltip':'bis 4 Zeilen, ungekürzt',
@@ -110,7 +108,7 @@ de:{
   ['in:notizen  in:kalender  in:archiv','Bereich (auch englisch: in:notes …)'],['ordner:Kunden','Ordner (Teilname)'],
   ['ist:offen  ist:erledigt  ist:aufgabe  ist:keine-aufgabe','Zeilenart (auch is:open …)'],['überschrift:Ideen','unter passender Überschrift'],
   ['seit:14d  seit:woche  seit:monat  seit:jahr  seit:2026-09-01','Datum der Tagesnotiz bzw. letzte Änderung'],
-  ['in:raindrop  link:beispiel.de  type:article  important:true  reminder:true','Raindrop-Lesezeichen (nur mit «in:raindrop»)'],
+  ['in:raindrop  link:beispiel.de  type:article  important:true','Raindrop-Lesezeichen (nur mit «in:raindrop»)'],
   ['Klick auf Titel','öffnet die Notiz · ⌥ Split View · ⌘ neues Fenster · ↑↓ + Enter']]
 }};
 let LANG='en';
@@ -127,7 +125,7 @@ function applyLang(){
   document.querySelectorAll('[data-i18n-tip]').forEach(e=>{e.title=T(e.dataset.i18nTip)});
   document.querySelectorAll('[data-i18n-ph]').forEach(e=>{e.placeholder=T(e.dataset.i18nPh)});
   q.setAttribute('aria-label',T('ph.search'));
-  $('#syntax').innerHTML=T('syntax').map(([c,d])=>'<tr><td>'+c.split(/\s{2,}/).map(x=>'<code>'+esc(x)+'</code>').join(' ')+'</td><td>'+esc(d)+'</td></tr>').join('');
+  $('#syntax').innerHTML=T('syntax').map(([c,d])=>'<tr'+(c.startsWith('in:raindrop')?' class="rd-only"':'')+'><td>'+c.split(/\s{2,}/).map(x=>'<code>'+esc(x)+'</code>').join(' ')+'</td><td>'+esc(d)+'</td></tr>').join('');
   kBar();
 }
 

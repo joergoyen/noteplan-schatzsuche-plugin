@@ -13,7 +13,7 @@ A search view for the [NotePlan](https://noteplan.co) sidebar. Type, press Enter
 - **Quick-search buttons**: whole word, notes only, journal of the last 30 days, no tasks, under a heading, open tasks, done in 30 days, newest first, your treasure tag.
 - **Filters** by date, heading, folder and line type (see the syntax below).
 - **Schatzkiste (treasure box)**: tick results across several searches, then save them as Markdown to a new note, to today's note or to the clipboard.
-- **Raindrop.io (optional)**: search your bookmarks next to your notes, with favourites and reminders.
+- **Raindrop.io (optional)**: search your bookmarks next to your notes, with favourites.
 - **Follows your NotePlan theme**, light and dark.
 - **English and German**: the language follows your system, or set it in the plugin settings.
 
@@ -60,7 +60,7 @@ NotePlan › **Settings › Plugins › Schatzsuche** (gear):
 
 1. In Raindrop.io go to **Settings › Integrations**, create an app and copy its **test token**.
 2. Paste it into the plugin setting **Raindrop token**.
-3. The Raindrop buttons appear. Use `in:raindrop`, plus Raindrop operators such as `link:example.com`, `type:article`, `important:true`, `reminder:true`.
+3. The Raindrop buttons appear. Use `in:raindrop`, plus Raindrop operators such as `link:example.com`, `type:article`, `important:true`.
 
 The token is only read, never shown or logged. Full-text search needs Raindrop Pro.
 

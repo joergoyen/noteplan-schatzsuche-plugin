@@ -11,7 +11,7 @@ Eine Suchansicht für die Seitenleiste von [NotePlan](https://noteplan.co). Such
 - **Schnellsuchen als Knöpfe**: ganzes Wort, nur Notizen, Tagebuch 30 Tage, ohne Aufgaben, unter Überschrift, offene Aufgaben, erledigt in 30 Tagen, neueste zuerst, dein Schatz-Tag.
 - **Filter** nach Datum, Überschrift, Ordner und Zeilenart (siehe Suchsyntax).
 - **Schatzkiste**: Treffer über mehrere Suchen hinweg ankreuzen und als Markdown speichern: als neue Notiz, in die heutige Tagesnotiz oder in die Zwischenablage.
-- **Raindrop.io (optional)**: Lesezeichen neben den Notizen durchsuchen, mit Favoriten und Wiedervorlage.
+- **Raindrop.io (optional)**: Lesezeichen neben den Notizen durchsuchen, mit Favoriten.
 - **Übernimmt dein NotePlan-Theme**, hell und dunkel.
 - **Deutsch und Englisch**: Die Sprache folgt dem System oder wird in den Einstellungen gewählt.
 
@@ -58,7 +58,7 @@ NotePlan › **Settings › Plugins › Schatzsuche** (Zahnrad):
 
 1. In Raindrop.io unter **Settings › Integrations** eine App anlegen und ihren **Test-Token** kopieren.
 2. In der Einstellung **Raindrop token** einfügen.
-3. Die Raindrop-Knöpfe erscheinen. Suche mit `in:raindrop`, dazu Raindrop-Operatoren wie `link:beispiel.de`, `type:article`, `important:true`, `reminder:true`.
+3. Die Raindrop-Knöpfe erscheinen. Suche mit `in:raindrop`, dazu Raindrop-Operatoren wie `link:beispiel.de`, `type:article`, `important:true`.
 
 Der Token wird nur gelesen, nie angezeigt oder protokolliert. Die Volltextsuche braucht Raindrop Pro.
 
