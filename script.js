@@ -8,3 +8,6 @@ globalThis.schatzsuche = async function() {
     "iconColor": "orange-500"
   });
 };
+// Called by NotePlan after the user saves the plugin settings. The view reads
+// the settings when it opens, so there is nothing to do here.
+globalThis.onSettingsUpdated = async function() {};

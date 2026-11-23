@@ -18,6 +18,9 @@ globalThis.${cmd.jsFunction} = async function() {
   const html = ${JSON.stringify(html)};
   await HTMLView.showInMainWindow(html, ${JSON.stringify(cmd.sidebarView.title)}, ${JSON.stringify(opts, null, 2).replace(/\n/g, '\n  ')});
 };
+// Called by NotePlan after the user saves the plugin settings. The view reads
+// the settings when it opens, so there is nothing to do here.
+globalThis.onSettingsUpdated = async function() {};
 `
 writeFileSync('script.js', out)
 console.log('script.js written (' + out.length + ' bytes)')

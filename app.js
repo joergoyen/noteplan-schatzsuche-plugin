@@ -551,15 +551,26 @@ function setTag(tag){
     b.dataset.add=b.dataset.tagtpl.replace('@TAG',tag);
   });
 }
+/* Settings: DataStore.settings first. In the web view it can come back empty,
+   so fall back to the plugin's own settings.json (data/<plugin id>/settings.json).
+   Only key names are logged, never values. */
+async function readSettings(){
+  let st={};
+  try{const s=await DataStore.settings;if(s&&typeof s==='object')st={...s}}catch(e){LOG('settings',e.message)}
+  if(!st.raindropToken&&!st.treasureTag&&!st.language){
+    try{const j=await DataStore.loadJSON('settings.json');if(j&&typeof j==='object')st={...j,...st}}catch(e){LOG('loadJSON',e.message)}
+  }
+  try{LOG('settings keys: '+Object.keys(st).join(', '))}catch(e){}
+  return st;
+}
 async function init(){
   if(ready)return;
   if(typeof DataStore==='undefined')return;
   ready=true;
-  try{const st=(await DataStore.settings)||{};
-    if(st.language)SETTINGS.language=st.language;
-    if(st.treasureTag)SETTINGS.treasureTag=st.treasureTag;
-    SETTINGS.raindropToken=st.raindropToken||'';
-  }catch(e){LOG('settings',e.message)}
+  const st=await readSettings();
+  if(st.language)SETTINGS.language=st.language;
+  if(st.treasureTag)SETTINGS.treasureTag=st.treasureTag;
+  SETTINGS.raindropToken=st.raindropToken||'';
   LANG=pickLang(SETTINGS.language);store.set('lang',LANG);
   setTag(SETTINGS.treasureTag);applyLang();applyTheme();
   $('#status').textContent=T('s.ready');
