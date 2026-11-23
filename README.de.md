@@ -57,8 +57,9 @@ NotePlan › **Settings › Plugins › Schatzsuche** (Zahnrad):
 ## Optional: Raindrop.io
 
 1. In Raindrop.io unter **Settings › Integrations** eine App anlegen und ihren **Test-Token** kopieren.
-2. In der Einstellung **Raindrop token** einfügen.
-3. Die Raindrop-Knöpfe erscheinen. Suche mit `in:raindrop`, dazu Raindrop-Operatoren wie `link:beispiel.de`, `type:article`, `important:true`.
+2. In der Einstellung **Raindrop token** einfügen und **Save** klicken.
+3. Den Settings-Dialog schließen und die Schatzsuche mit ↻ (oben rechts) neu laden. Die Ansicht liest die Einstellungen nur beim Öffnen.
+4. Die Raindrop-Knöpfe erscheinen. Suche mit `in:raindrop`, dazu Raindrop-Operatoren wie `link:beispiel.de`, `type:article`, `important:true`.
 
 Der Token wird nur gelesen, nie angezeigt oder protokolliert. Die Volltextsuche braucht Raindrop Pro.
 

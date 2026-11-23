@@ -59,8 +59,9 @@ NotePlan › **Settings › Plugins › Schatzsuche** (gear):
 ## Optional: Raindrop.io
 
 1. In Raindrop.io go to **Settings › Integrations**, create an app and copy its **test token**.
-2. Paste it into the plugin setting **Raindrop token**.
-3. The Raindrop buttons appear. Use `in:raindrop`, plus Raindrop operators such as `link:example.com`, `type:article`, `important:true`.
+2. Paste it into the plugin setting **Raindrop token** and click **Save**.
+3. Close the settings dialog, then reload Schatzsuche with ↻ (top right). The view reads the settings only when it opens.
+4. The Raindrop buttons appear. Use `in:raindrop`, plus Raindrop operators such as `link:example.com`, `type:article`, `important:true`.
 
 The token is only read, never shown or logged. Full-text search needs Raindrop Pro.
 
